@@ -33,4 +33,50 @@
         <axis xyz="0 1 0" />
         <origin rpy="0 0 0" xyz="0 -0.07 0" />
     </joint>
+
+    <link name="wheel_left_link">
+        <visual>
+            <origin rpy="-1.57 0 0" xyz="0 0 0" />
+            <geometry>
+                <mesh filename="package://bumperbot_description/meshes/wheel_left_link.STL" />
+            </geometry>
+        </visual>
+    </link>
+
+    <joint name="wheel_left_joint" type="continuous">
+        <parent link="base_link" />
+        <child link="wheel_left_link" />
+        <axis xyz="0 1 0" />
+        <origin rpy="0 0 0" xyz="0 0.07 0" />
+    </joint>
+
+    <link name="castor_front_link">
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <geometry>
+                <mesh filename="package://bumperbot_description/meshes/castor_front_link.STL" />
+            </geometry>
+        </visual>
+    </link>
+
+    <joint name="castor_front_joint" type="fixed">
+        <parent link="base_link" />
+        <child link="castor_front_link" />
+        <origin rpy="0 0 0" xyz="0.04755 0 -0.0275" />
+    </joint>
+
+    <link name="castor_rear_link">
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <geometry>
+                <mesh filename="package://bumperbot_description/meshes/castor_rear_link.STL" />
+            </geometry>
+        </visual>
+    </link>
+
+    <joint name="castor_rear_joint" type="fixed">
+        <parent link="base_link" />
+        <child link="castor_rear_link" />
+        <origin rpy="0 0 0" xyz="-0.04755 0 -0.0275" />
+    </joint>
 </robot>
